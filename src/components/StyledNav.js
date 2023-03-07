@@ -9,7 +9,7 @@ export const StyledNav = () => {
       <StyledNavDiv>
         <NavLink
           style={({ isActive }) => (isActive ? activeStyle : style)}
-          to="/landing-page"
+          to="/"
         >
           Search for movies
         </NavLink>
@@ -22,7 +22,7 @@ export const StyledNav = () => {
       </StyledNavDiv>
 
       <Routes>
-        <Route path="/landing-page" element={<LandingPage />} />
+        <Route path="*" element={<LandingPage />} />
         <Route path="/watchlist-page" element={<WatchlistPage />} />
       </Routes>
     </>

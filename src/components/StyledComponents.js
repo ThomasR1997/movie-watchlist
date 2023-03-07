@@ -32,11 +32,15 @@ export const SearchIcon = styled(AiOutlineSearch)`
   width: 24px;
   height: 24px;
   fill: gray;
+
+  position: absolute;
+  top: 25%;
+  padding-left: 1em;
 `;
 
 export const StyledSearch = styled.input`
   width: 50%;
-  padding: 1em;
+  padding: 1em 3em;
   border: #d1d5db 2px solid;
   border-radius: 10px 0 0 10px;
   color: #6b7280;
