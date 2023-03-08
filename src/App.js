@@ -1,4 +1,5 @@
 import "./App.css";
+
 import { StyledNav } from "./components/StyledNav";
 
 function App() {
