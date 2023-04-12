@@ -22,10 +22,8 @@ export const LandingPage = () => {
   // User input
   const [search, setSearch] = useState("");
 
+  // local storage
   const [storage, setStorage] = useState([]);
-
-  // APi with user input
-  // const [searchData, setSearchData] = useState([]);
 
   // Gets API with search results
   const fetchData = async (callback) => {
@@ -43,43 +41,13 @@ export const LandingPage = () => {
     setSearch(document.getElementById("ye").value);
   };
 
-  // Array for storing imdbID for searched movies
-  // let idArray = [];
-
-  // let myArr = [];
-
   // Click handler for search button
   const handleClick = () => {
     // Calling fetchData
     fetchData(setData);
-
-    // Storing imdbID of search in an array
-    // data &&
-    //   data.Search.map((e) => {
-    //     return idArray.push(e.imdbID);
-    //   });
-
-    // console.log("id array", idArray);
-
-    // Running fetchDataInfo() on each imdbID in the array
-    // idArray.map((e) => fetchDataInfo(e));
-
-    // console.log("my array", myArr);
-    // console.log("state", searchData);
   };
 
-  // Function for fetching API for each imdbID
-  // const fetchDataInfo = async (props) => {
-  //   const response = await fetch(
-  //     `http://www.omdbapi.com/?i=${props}&apikey=ac42c6f0`
-  //   );
-
-  //   const data = await response.json();
-
-  //   // myArr.push(data);
-  //   setSearchData([...searchData, data]);
-  // };
-
+  // only saves to local storage if storage is NOT empty
   if (storage.length !== 0) {
     localStorage.setItem(`myData`, JSON.stringify(storage));
   }
@@ -104,7 +72,6 @@ export const LandingPage = () => {
                 ...storage,
                 { id: uuidv4(), poster: item.Poster, title: item.Title },
               ]);
-              console.log("added", storage);
             };
 
             return (
@@ -122,21 +89,6 @@ export const LandingPage = () => {
               </StyledDiv>
             );
           })}
-
-        {/* {searchData &&
-          searchData.map((e, i) => {
-            return (
-              <div key={i}>
-                <img src={e.Poster} alt="" />
-                <h1>
-                  {e.Title} {e.Ratings[0].value}
-                </h1>
-                <h4>{e.Runtime}</h4>
-                <h4>{e.Genre}</h4>
-                <p>{e.Plot}</p>
-              </div>
-            );
-          })} */}
       </div>
     );
   } else {
