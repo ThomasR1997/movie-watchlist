@@ -6,6 +6,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 import { IoMdAddCircle, IoMdRemoveCircle } from "react-icons/io";
 
+// Styling for navbar
 export const StyledNavDiv = styled.div`
   display: flex;
   align-items: center;
@@ -20,20 +21,24 @@ export const StyledNavDiv = styled.div`
   padding: 5em;
 `;
 
+// Div for empty search and watchlist
 export const MessageDiv = styled.div`
   margin: 10em;
 `;
 
+// Message for empty search and watchlist
 export const StyledMessage = styled.h1`
   color: #dfdddd;
   font-size: 25px;
 `;
 
+// Styling for search bar div
 export const SearchDiv = styled.div`
   position: relative;
   margin-top: -1.75em;
 `;
 
+// Styling for search icon
 export const SearchIcon = styled(AiOutlineSearch)`
   width: 24px;
   height: 24px;
@@ -44,6 +49,7 @@ export const SearchIcon = styled(AiOutlineSearch)`
   padding-left: 1em;
 `;
 
+// Styling for search input
 export const StyledSearch = styled.input`
   width: 50%;
   padding: 1em 3em;
@@ -53,6 +59,7 @@ export const StyledSearch = styled.input`
   font-size: 16px;
 `;
 
+// Styling for search button
 export const SearchButton = styled.button`
   padding: 1em 3em;
   background-color: white;
@@ -64,6 +71,7 @@ export const SearchButton = styled.button`
   cursor: pointer;
 `;
 
+// Container for each search result
 export const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
@@ -74,11 +82,13 @@ export const StyledDiv = styled.div`
   border-bottom: #e5e7eb solid 3px;
 `;
 
+// Container for search result image
 export const StyledImage = styled.img`
   width: 20%;
   margin-right: 2em;
 `;
 
+// Styling for add to/remove from watclist button
 export const StyledButton = styled.button`
   display: flex;
   align-items: center;
@@ -88,6 +98,7 @@ export const StyledButton = styled.button`
   cursor: pointer;
 `;
 
+// Icons
 export const AddIcon = styled(IoMdAddCircle)`
   width: 24px;
   height: 24px;
