@@ -4,6 +4,8 @@ import navImg from "../images/nav-img.png";
 
 import { AiOutlineSearch } from "react-icons/ai";
 
+import { IoMdAddCircle, IoMdRemoveCircle } from "react-icons/io";
+
 export const StyledNavDiv = styled.div`
   display: flex;
   align-items: center;
@@ -16,6 +18,10 @@ export const StyledNavDiv = styled.div`
   background-color: #0e0e0e;
 
   padding: 5em;
+`;
+
+export const MessageDiv = styled.div`
+  margin: 10em;
 `;
 
 export const StyledMessage = styled.h1`
@@ -56,4 +62,40 @@ export const SearchButton = styled.button`
   border: #d1d5db 2px solid;
   border-left: none;
   cursor: pointer;
+`;
+
+export const StyledDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 4em;
+  margin: 0 10em;
+  border-bottom: #e5e7eb solid 3px;
+`;
+
+export const StyledImage = styled.img`
+  width: 20%;
+  margin-right: 2em;
+`;
+
+export const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+`;
+
+export const AddIcon = styled(IoMdAddCircle)`
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5em;
+`;
+
+export const RemoveIcon = styled(IoMdRemoveCircle)`
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5em;
 `;
