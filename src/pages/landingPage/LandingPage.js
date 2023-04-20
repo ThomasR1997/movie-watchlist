@@ -91,6 +91,26 @@ export const LandingPage = () => {
           })}
       </div>
     );
+  } else if (data && !data.Search) {
+    return (
+      <div>
+        <SearchDiv>
+          <SearchIcon />
+          <StyledSearch
+            id="ye"
+            onChange={() => handleChange()}
+            placeholder="Search for a movie"
+          />
+          <SearchButton onClick={() => handleClick()}>Search</SearchButton>
+        </SearchDiv>
+
+        <MessageDiv>
+          <StyledMessage>
+            Unable to find what you're looking for. Please try another search.
+          </StyledMessage>
+        </MessageDiv>
+      </div>
+    );
   } else {
     return (
       <div>
