@@ -28,7 +28,7 @@ export const LandingPage = () => {
   // Gets API with search results
   const fetchData = async (callback) => {
     const response = await fetch(
-      `http://www.omdbapi.com/?s=${search}&apikey=ac42c6f0`
+      `https://www.omdbapi.com/?s=${search}&apikey=ac42c6f0`
     );
 
     const data = await response.json();
