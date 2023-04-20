@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import {
+  AddIcon,
+  FlexDiv,
   MessageDiv,
   RemoveIcon,
   StyledButton,
@@ -7,6 +9,7 @@ import {
   StyledImage,
   StyledMessage,
 } from "../../components/StyledComponents";
+import { NavLink } from "react-router-dom";
 
 export const WatchlistPage = () => {
   // get local storage
@@ -37,6 +40,13 @@ export const WatchlistPage = () => {
           <StyledMessage>
             Your watchlist is looking a little empty...
           </StyledMessage>
+
+          <NavLink style={style} to="/">
+            <FlexDiv>
+              <AddIcon />
+              <p>Let's add some movies!</p>
+            </FlexDiv>
+          </NavLink>
         </MessageDiv>
       </div>
     );
@@ -53,4 +63,9 @@ export const WatchlistPage = () => {
       );
     });
   }
+};
+
+let style = {
+  textDecoration: "none",
+  color: "black",
 };

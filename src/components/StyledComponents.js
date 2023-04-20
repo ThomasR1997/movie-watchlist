@@ -110,3 +110,12 @@ export const RemoveIcon = styled(IoMdRemoveCircle)`
   height: 24px;
   margin-right: 0.5em;
 `;
+
+// Utility div
+export const FlexDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+`;
