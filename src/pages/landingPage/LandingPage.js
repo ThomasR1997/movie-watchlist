@@ -11,6 +11,7 @@ import {
   StyledSearch,
   AddIcon,
   StyledButton,
+  TitleDiv,
 } from "../../components/StyledComponents";
 
 import movieImg from "../../images/Icon.png";
@@ -78,7 +79,10 @@ export const LandingPage = () => {
               <StyledDiv key={index}>
                 <StyledImage src={item.Poster} />
                 <div>
-                  <h1>{item.Title}</h1>
+                  <TitleDiv>
+                    <h1>{item.Title}</h1>
+                  </TitleDiv>
+
                   <StyledButton
                     onClick={() => addToList(item.Poster, item.Title)}
                   >

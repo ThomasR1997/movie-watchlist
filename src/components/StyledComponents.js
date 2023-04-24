@@ -88,6 +88,10 @@ export const StyledImage = styled.img`
   margin-right: 2em;
 `;
 
+export const TitleDiv = styled.div`
+  width: 25em;
+`;
+
 // Styling for add to/remove from watclist button
 export const StyledButton = styled.button`
   display: flex;

@@ -8,6 +8,7 @@ import {
   StyledDiv,
   StyledImage,
   StyledMessage,
+  TitleDiv,
 } from "../../components/StyledComponents";
 import { NavLink } from "react-router-dom";
 
@@ -55,7 +56,11 @@ export const WatchlistPage = () => {
       return (
         <StyledDiv key={index}>
           <StyledImage src={item.poster} />
-          <h1>{item.title}</h1>
+
+          <TitleDiv>
+            <h1>{item.title}</h1>
+          </TitleDiv>
+
           <StyledButton onClick={() => removeItem(item.id)}>
             <RemoveIcon /> Remove
           </StyledButton>
