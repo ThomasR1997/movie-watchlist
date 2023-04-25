@@ -26,6 +26,9 @@ export const LandingPage = () => {
   // local storage
   const [storage, setStorage] = useState([]);
 
+  // State for "added to watchlist" message
+  const [msg, setMsg] = useState({});
+
   // Gets API with search results
   const fetchData = async (callback) => {
     const response = await fetch(
@@ -67,12 +70,24 @@ export const LandingPage = () => {
         </SearchDiv>
 
         {data &&
-          data.Search.map((item, index) => {
+          data.Search.map((item, index, e) => {
             const addToList = () => {
               setStorage([
                 ...storage,
                 { id: uuidv4(), poster: item.Poster, title: item.Title },
               ]);
+
+              setMsg((prev) => ({
+                ...msg,
+                [index]: !prev[index],
+              }));
+
+              setTimeout(() => {
+                setMsg((prev) => ({
+                  ...msg,
+                  [index]: !prev[index],
+                }));
+              }, 1000);
             };
 
             return (
@@ -81,10 +96,13 @@ export const LandingPage = () => {
                 <div>
                   <TitleDiv>
                     <h1>{item.Title}</h1>
+                    <p style={msg[`${index}`] ? activeStyle : style}>
+                      Added to watchlist
+                    </p>
                   </TitleDiv>
 
                   <StyledButton
-                    onClick={() => addToList(item.Poster, item.Title)}
+                    onClick={() => addToList(item.Poster, item.Title, e)}
                   >
                     <AddIcon />
                     Watchlist
@@ -135,4 +153,12 @@ export const LandingPage = () => {
       </div>
     );
   }
+};
+
+let style = {
+  display: "none",
+};
+
+let activeStyle = {
+  display: "block",
 };
